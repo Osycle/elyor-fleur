@@ -520,6 +520,7 @@ html body{
 
 		.col-md-offset-right-#{$i} { 
 			margin-right: 100/12*$i+%;
+			float:right;
 		}
 
 	}
@@ -529,13 +530,13 @@ html body{
 @media (min-width: 767px){
 
 
-	@for $i from 12 through 1 {
+	// @for $i from 12 through 1 {
 
-		.col-sm-offset-left-#{$i} { 
-			margin-left: 100/12*$i+%;
-		}
+	// 	.col-sm-offset-left-#{$i} { 
+	// 		margin-left: 100/12*$i+%;
+	// 	}
 
-	}
+	// }
 	@for $i from 1 through 12 {
 
 		.col-sm-offset-right-#{$i} { 

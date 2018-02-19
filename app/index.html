@@ -27,6 +27,67 @@
 
 
 
+	<!-- FEEDBACK -->
+	<div class="bid-modal modal fade animated" id="bid-modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+				<div class="modal-body">
+
+					 <!-- success-info -->
+					<div class="col-md-12 success-info m-b-30 align-center">
+						<font color="red"><div class="info-suc" id=""></div></font>
+						<font color="green"><div class="info-err" id=""></div></font>
+					</div>
+
+					<form  method="POST" action="">
+						<h3>Связаться с нами</h3>
+
+						<!-- NAME -->
+						<label><span data-content="Имя, фамилия">Ваше имя</span></label>
+						<input type="text" name="name" autocomplete="off" placeholder="Имя, фамилия">
+						<!-- TEL -->
+
+						<label><span data-content="Номер телефона">Номер телефона</span></label>
+						<input type="text" name="phone" autocomplete="off" placeholder="+012 (34) 567 89 10">
+
+						<div class="form-footer">
+							<button type="submit" class="m-auto btn-def color-white submit"><b>Отправить</b></button>
+						</div>
+
+						<br>
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- NOTIFY TO BASKET -->
+	<div class="order-notify-modal modal fade animated" id="order-notify" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<button type="button" class="btn" data-dismiss="modal"><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
+				<div class="modal-body">
+
+					<form  method="POST" action="" class="clearfix">
+						<input type="text" hidden name="orders">
+						<div class="choices">
+							<div><button type="button" class="btn-def" data-dismiss="modal">Продолжить покупку</button></div>
+							<div><button type="submit" class="btn-def">Перейти в корзину</button></div>
+						</div>
+						<br>
+					</form>
+
+					<!-- orders-content -->
+					<div class="orders-content"></div>
+
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!-- HEADER -->
@@ -53,7 +114,7 @@
 
 						<div class="pie-md-elastic-2 align-center">
 							<span class="btn-def m-auto m-v-15" style="width:180px;">
-								<a class="p-v-5" data-toggle="modal" data-target="#bidModal" role="button">Оставить заявку</a>
+								<a class="p-v-5" data-toggle="modal" data-target="#bid-modal" role="button">Оставить заявку</a>
 							</span>
 						</div>
 
@@ -99,7 +160,7 @@
 						<div class="pie-md-elastic-2 align-right p-h-15">
 							<div class="header-basket">
 								<i class="fa fa-shopping-cart vam hidden-xs hidden-sm color-1"></i>
-								<span class="circle">5</span>
+								<span class="circle order-counter">0</span>
 							</div>
 						</div>
 					</div>
@@ -198,7 +259,7 @@
 					</ul>
 
 				</div>
-				<!-- <hr class="hr-shadow up"> -->
+				
 			</div>
 		</div> <!-- ./END SLIDER -->
 
@@ -279,25 +340,202 @@
 				<div class="container">
 					<h1>Популярные товары</h1>
 					<div class="clearfix m-v-30">
-						<div class="short-popular-items figure-m-v-20">
+						<div class="short-popular-content figure-m-v-20">
 
-							<figure>
-								<div class="img-content">
-									<img src="img/flowers/1.jpg">
-								</div>
-								<div class="desc-content clearfix relative">
-									<h2>Heavenly white rose 10821</h2>
-									<div class="price-content col-md-6">
-										<p><span class="price">100.000 сум</span></p>
-										<p><span class="price old">130.000</span></p>
+							<div class="short-popular-items col-md-4">
+
+								<figure>
+									<div class="new-item">
+										<img src="img/icons/new.png" alt="Новинка" title="Новинка">
 									</div>
-									<div class="btn-content">
-										<span class="btn-def m-auto text-uppercase" style="width: 130px;">
-											<a class="p-v-10" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
-										</span>
+									<div class="img-content"><img src="img/flowers/1.jpg"></div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="10" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/1.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+
 									</div>
-								</div>
-							</figure>
+								</figure>
+
+								<figure>
+									<div class="img-content">
+										<img src="img/flowers/2.jpg">
+									</div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="11" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/2.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</figure>
+
+							</div>
+
+							
+							<div class="short-popular-items col-md-4">
+								<figure>
+									<div class="img-content">
+										<img src="img/flowers/3.jpg">
+									</div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="20" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/3.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</figure>
+								<figure>
+									<div class="img-content">
+										<img src="img/flowers/4.jpg">
+									</div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="21" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/4.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</figure>
+							</div>
+
+							<div class="short-popular-items col-md-4">
+								<figure>
+									<div class="img-content">
+										<img src="img/flowers/5.jpg">
+									</div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="30" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/5.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</figure>
+								<figure>
+									<div class="img-content">
+										<img src="img/flowers/6.jpg">
+									</div>
+									<div class="desc-content clearfix relative">
+										<h2>Heavenly white rose 10821</h2>
+										<div class="price-content col-md-6">
+											<p><span class="price">100.000 сум</span></p>
+											<p><span class="price old">130.000</span></p>
+										</div>
+										<div class="btn-content">
+											<span class="btn-def m-auto text-uppercase">
+												<a class="p-v-10" orderid="31" data-toggle="modal" data-target="#order-notify" role="button">Заказать</a>
+											</span>
+										</div>
+										<!-- modal-include -->
+										<div class="modal-include" hidden>
+											<div class="img-content col-sm-5">
+												<img src="img/flowers/6.jpg">
+											</div>
+											<div class="desc-content col-sm-7">
+												<h3>Heavenly white rose 10821</h3>
+												<p><span class="price">100.000 сум</span></p>
+												<div class="modal-include-footer">
+													<span type="button" class="btn-res btn-def order-remove" role="button">Убрать из корзины</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</figure>
+							</div>
 
 
 						</div>
@@ -308,15 +546,128 @@
 			
 
 
+						<div class="line-arrow hide right">
+							<svg version="1.1" aria-hidden="true">
+								<line x1="0" y1="0" x2="100%" y2="0">
+							</svg>
+							<i class="fa fa-angle-right"></i>
+						</div>
 
 
+			<div class="row short-work">
+				<div class="container">
+					<h1>Как мы работаем</h1>
+
+					<div class="short-work-content clearfix figure-m-v-60 m-v-30">
+
+						<figure class="col-md-2 col-md-offset-2">
+							<div class="img-content">
+								<div class="line-arrow right"></div>
+								<img src="img/icons/work-1.png" alt="">
+							</div>
+							<div class="desc-content">
+								<h2>Book bucket</h2>
+							</div>
+						</figure>
 
 
+						<figure class="col-md-2 col-md-offset-4">
+							<div class="img-content">
+								<div class="line-arrow down"></div>
+								<img src="img/icons/work-2.png" alt="">
+							</div>
+							<div class="desc-content">
+								<h2>Book bucket</h2>
+							</div>
+						</figure>
+
+						<figure class="col-md-2 col-md-offset-2"">
+							<div class="img-content">
+								<div class="line-arrow left"></div>
+								<img src="img/icons/work-3.png" alt="">
+							</div>
+							<div class="desc-content">
+								<h2>Book bucket</h2>
+							</div>
+						</figure>
+
+						<figure class="col-md-2 col-md-offset-4">
+							<div class="img-content">
+								<img src="img/icons/work-4.png" alt="">
+							</div>
+							<div class="desc-content">
+								<h2>Book bucket</h2>
+							</div>
+						</figure>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="row short-reviews">
+				<div class="container">
+
+					<h1>Пожелания и комментарии</h1>
+					
+					<div class="short-reviews-carousel m-v-60 clearfix align-center">
+						<div class="carousel-content">
+
+							<div class="carousel-cell">
+								<div class="desc-content">
+									<h1><span class="circle-status green"></span>Jack Williams</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feuguat ipsum vitae arcu</p>
+								</div>
+							</div>
+
+							<div class="carousel-cell">
+								<div class="desc-content">
+									<h1><span class="circle-status blue"></span>Jack Williams</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feuguat ipsum vitae arcu</p>
+								</div>
+							</div>
+
+							<div class="carousel-cell">
+								<div class="desc-content">
+									<h1><span class="circle-status gray"></span>Jack Williams</h1>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feuguat ipsum vitae arcu</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
 
 
+			<div class="row short-feedback m-v-30">
+				<div class="container">
+					
+					<div class="short-feedback-content">
+						<form action="" method="get" accept-charset="utf-8">
 
+							<div class="row">
+								<div class="col-md-4 p-h-15">
+									<input type="text" name="name" placeholder="Ваше имя" />
+									<input type="text" name="name" placeholder="Ваш телефон" />
+									<div class="btn-content">
+										<span class="btn-def">
+											<button type="submit" class="box-100 btn-res">Отправить</button>
+										</span>
+									</div>
+								</div>
 
+								<div class="col-md-8 p-h-15">
+									<textarea placeholder="Ваше пожелание" name="msg" type="text"></textarea>
+								</div>
+							</div>
 
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<br><br><br>
 
 
 		</div><!-- ./MAIN-CONTENT -->
